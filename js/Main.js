@@ -3,6 +3,14 @@ document.getElementById("MainTitle").innerText = "Point & Click Game";
 //Game window ref
 const GameWindow = document.getElementById("container");
 
+//inventory
+const inventoryList = document.getElementById("InventoryList");
+
+//game state
+gameState = {
+    "door2locked": true
+}
+
 //main moveable char ref
 const MainCharacter = document.getElementById("MainCharacter");
 const OffssetCharacter = 40;
@@ -19,12 +27,35 @@ GameWindow.onclick = function (e) {
 
     switch (e.target.id) {
         case "Door1":
-            console.log("Open Door Bitch;");
-            Door1.style.opacity = 0.2;
-            Sign.style.opacity = 1;
+            if (gameState.door2locked == true) {
+                console.log("Open Door;");
+                Door1.style.opacity = 0.2;
+                Sign.style.opacity = 1;
+                //check for key
+                if (document.getElementById("inventory_Key") !== null) {
+                    gameState.door2locked = false;
+                    alert("Door unlocked");
+                } else {
+                    alert("Door is locked!");
+                }
+                //no = message saying needs key 
+            } else {
+                console.log("entering building")
+                alert("Entering Building");
+            }
+            break;
+        case "Key1":
+            if (document.getElementById("Key1") !== null) {
+                console.log("you found key")
+                document.getElementById("Key1").remove();
+                const keyElement = document.createElement("li");
+                keyElement.id = "inventory_Key";
+                keyElement.innerText = "Key";
+                inventoryList.appendChild(keyElement);
+            }
             break;
         case "Sign":
-            console.log("Read Sign Bitch;");
+            console.log("Read Sign;");
             Sign.style.opacity = 0.2;
             Door1.style.opacity = 1;
             break;
