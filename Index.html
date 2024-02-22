@@ -20,18 +20,31 @@
 
     <div id="container">
         <img id="Background" draggable="false" src="assets/BG/tilemap1.jpg" />
-        <div class="InventorySquare">
+
+        <!--Inventory-->
+        <div class="InventorySquare" class="foreground">
             <h2 id="InventoryText">Inventory</h2>
             <ul id="InventoryList"></ul>
         </div>
-        <div class="square"></div>
-        <div id="Door1"></div>
-        <div id="Key1"><img src="assets/World Objects/Key.png"></div>
-        <div id="Sign"></div>
-        <img src="assets/Game Icon/Wilky Gut.png" class="CharacterTalking" />
-        <img src="assets/World Objects/portairStatue.png" class="RightChar">
-        <div id="MainCharacter" class="HeroCharacter"><img
-                src="assets/Character animations/animated-character-1-idle.gif">
+
+        <div id="DialogBox" class="foreground"></div>
+
+        <!--Pickupables-->
+        <div id="Door1" class="foreground"></div>
+        <div id="Key1" class="foreground"><img src="assets/World Objects/Key.png"></div>
+        <div id="Sign" class="foreground"></div>
+        <div id="Statue" class="foreground"></div>
+
+        <!--Dialogs Hander-->
+        <div id="dialogBar">
+            <div id="MainCharacterSpeech" class="foreground SpeechBubble"></div>
+            <div id="OtherCharacterSpeech" class="foreground SpeechBubble"></div>
+        </div>
+
+        <img src="assets/Game Icon/Wilky Gut.png" draggable="false" class="foreground CharacterTalking">
+        <img src="assets/World Objects/portairStatue.png" draggable="false" class="foreground RightChar">
+        <div id="MainCharacter" class="foreground HeroCharacter"><img
+                src="assets/Character animations/animated-character-1-idle.gif" draggable="false" class="foreground">
         </div>
         <div id="TileMap" class="Background"></div>
         <img src="assets/BG/tilemap2.jpg">

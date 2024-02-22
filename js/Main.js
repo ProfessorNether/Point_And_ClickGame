@@ -6,6 +6,13 @@ const GameWindow = document.getElementById("container");
 //inventory
 const inventoryList = document.getElementById("InventoryList");
 
+const MainCharacterSpeech = document.getElementById("MainCharacterSpeech");
+const OtherCharacterSpeech = document.getElementById("OtherCharacterSpeech");
+const otherAvatar = document.getElementById("RightChar");
+
+const sec = 1000;
+
+
 //game state
 gameState = {
     "door2locked": true
@@ -59,6 +66,14 @@ GameWindow.onclick = function (e) {
             Sign.style.opacity = 0.2;
             Door1.style.opacity = 1;
             break;
+        case "Statue":
+            console.log("Talk to Statue;");
+            setTimeout(function () { otherAvatar.style.opacity = 1; }), 4 * sec;
+            ShowMessage(MainCharacterSpeech, "Wow cool statue...");
+            setTimeout(ShowMessage, 4 * sec, OtherCharacterSpeech, "I can can speak dummy");
+            setTimeout(ShowMessage, 8 * sec, MainCharacterSpeech, "You should check the north house");
+            setTimeout(function () { otherAvatar.style.opacity = 0; }), 12 * sec;
+            break;
 
         default:
             MainCharacter.style.background.opacity = 0;
@@ -66,5 +81,25 @@ GameWindow.onclick = function (e) {
             Sign.style.opacity = 1;
             //do something
             break;
+    }
+
+    /**
+    * @param {getElementById} targetBalloon
+    * @param {string} message
+    */
+    function ShowMessage(targetBalloon, message) {
+        targetBalloon.style.opacity = "1";
+        setTimeout(HideMessage, 2 * sec);
+    }
+    // ShowMessage("MainCharacterSpeech");
+    // ShowMessage("OtherCharacterSpeech");
+    setTimeout(ShowMessage, 1 * sec, OtherCharacterSpeech);
+    setTimeout(ShowMessage, 2 * sec, MainCharacterSpeech);
+
+    /**
+    * @param {string} targetBalloon
+    */
+    function HideMessage(targetBalloon) {
+        document.getElementById(targetBalloon).style.opacity = "0";
     }
 }

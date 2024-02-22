@@ -17,10 +17,7 @@ body {
     grid-row-start: 2;
 }
 
-#Background {
-    position: absolute;
-}
-
+/*interactables*/
 #Door1 {
     position: absolute;
 
@@ -46,6 +43,19 @@ body {
     grid-row-start: 2;
 }
 
+#Statue {
+    position: absolute;
+
+    width: 38px;
+    height: 66px;
+    background-color: rgb(239, 183, 1);
+    opacity: 1;
+    left: 700px;
+    top: 283px;
+    grid-column-start: 2;
+    grid-row-start: 2;
+}
+
 #Key1 {
     position: absolute;
 
@@ -57,6 +67,7 @@ body {
     grid-row-start: 2;
 }
 
+/*character*/
 .CharacterTalking {
     position: absolute;
     width: 14%;
@@ -68,8 +79,9 @@ body {
 }
 
 .RightChar {
+    opacity: 0;
     position: absolute;
-    width: 18%;
+    width: 25%;
     height: auto;
     bottom: 0px;
     right: 0px;
@@ -77,14 +89,57 @@ body {
     grid-row-start: 2;
 }
 
-.square {
-    position: absolute;
-    height: 60px;
-    width: 800px;
-    bottom: 0px;
-    background-color: #2a2a2a;
+#MainCharacterSpeech {
+    opacity: 0;
+    left: 72px;
+    top: 500px;
 }
 
+.SpeechBubble {
+    background-color: aliceblue;
+    border-radius: 60px;
+    color: #2a2a2a;
+    padding: 5px 5px 5px 20px;
+    font-size: 12px;
+    width: 500px;
+    transition: all 1s ease-in-out;
+    grid-column-start: 2;
+    grid-row-start: 2;
+}
+
+#OtherCharacterSpeech {
+    opacity: 0;
+    right: 72px;
+    top: 500px;
+}
+
+#dialogBar {
+    bottom: 0px;
+}
+
+#DialogBox {
+    position: absolute;
+    height: 60px;
+    width: 776px;
+    bottom: 0px;
+    /*text in onj will be away from its edges*/
+    padding: 5px 5px 5px 20px;
+    font-size: 12px;
+    background-color: #2a2a2a;
+    transition: all 1s ease-in-out;
+
+    grid-column-start: 2;
+    grid-row-start: 2;
+}
+
+/*inventory*/
+#InventoryText {
+    position: absolute;
+    top: -20px;
+    left: 10px;
+    grid-column-start: 2;
+    grid-row-start: 2;
+}
 
 .InventorySquare {
     position: absolute;
@@ -113,14 +168,6 @@ h2 {
     color: antiquewhite;
 }
 
-#InventoryText {
-    position: absolute;
-    top: -20px;
-    left: 10px;
-    grid-column-start: 2;
-    grid-row-start: 2;
-}
-
 .HeroCharacter {
     position: absolute;
     z-index: 0;
@@ -140,4 +187,14 @@ h2 {
 
     grid-column-start: 2;
     grid-row-start: 2;
+}
+
+#Background {
+    position: absolute;
+}
+
+.foreground {
+    position: absolute;
+    z-index: 1000;
+    transition: all 1s ease-in-out;
 }
