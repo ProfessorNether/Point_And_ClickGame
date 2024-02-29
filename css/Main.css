@@ -57,14 +57,12 @@ body {
 }
 
 #Key1 {
-    position: absolute;
-
-    width: 20px;
+    width: 32px;
+    height: 32px;
+    background-color: #fffb00;
     opacity: 1;
-    left: 200px;
-    top: 20px;
-    grid-column-start: 2;
-    grid-row-start: 2;
+    top: 166px;
+    left: 416px;
 }
 
 /*character*/
@@ -91,25 +89,25 @@ body {
 
 #MainCharacterSpeech {
     opacity: 0;
-    left: 72px;
+    left: 110px;
     top: 500px;
 }
 
 .SpeechBubble {
     background-color: aliceblue;
-    border-radius: 60px;
+    border-radius: 11px;
     color: #2a2a2a;
     padding: 5px 5px 5px 20px;
     font-size: 12px;
-    width: 500px;
+    height: 30px;
+    width: 241px;
     transition: all 1s ease-in-out;
     grid-column-start: 2;
     grid-row-start: 2;
 }
 
 #OtherCharacterSpeech {
-    opacity: 0;
-    right: 72px;
+    right: 110px;
     top: 500px;
 }
 
@@ -120,10 +118,10 @@ body {
 #DialogBox {
     position: absolute;
     height: 60px;
-    width: 776px;
+    width: 750px;
     bottom: 0px;
     /*text in onj will be away from its edges*/
-    padding: 5px 5px 5px 20px;
+    padding: 5px 5px 5px 45px;
     font-size: 12px;
     background-color: #2a2a2a;
     transition: all 1s ease-in-out;
@@ -175,6 +173,14 @@ h2 {
 
 }
 
+#MainCharacterIMG {
+    opacity: 0;
+}
+
+#counterAvatarImg {
+    opacity: 0;
+}
+
 /*changing the image*/
 .HeroCharacter img {
     width: 75px;
@@ -184,7 +190,7 @@ h2 {
 #MainCharacter {
     left: 400px;
     top: 304px;
-
+    /*opacity: 0;*/
     grid-column-start: 2;
     grid-row-start: 2;
 }
