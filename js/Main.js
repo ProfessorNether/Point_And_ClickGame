@@ -14,8 +14,13 @@ const MainAvatar = document.getElementById("MainCharacterIMG");
 const otherHouseAvatar = document.getElementById("CounterHouseIMG");
 const otherKeyAvatar = document.getElementById("counterKeyImg");
 
+//letter const
 const otherLetterClose = document.getElementById("counterLetterCloseImg");
 const otherLetterOpen = document.getElementById("counterLetterOpenImg");
+
+//apple const
+const appleFront = document.getElementById("AppleFrontImg");
+const appleSide = document.getElementById("AppleSideWaysImg");
 
 const HouseLock = document.getElementById("HouseLock");
 
@@ -29,7 +34,7 @@ let gameState = {
     "KeyPickedUp": false,
     "ChestOpened": false,
     "AppleFound": false,
-    "FirstTimeTalkingToFlames": false
+    "FirstTimeTalkingToFlames": true
     // "FirstTimeFlameTalk": false
 }
 
@@ -106,7 +111,7 @@ GameWindow.onclick = function (e) {
             }
             break
         case "Chest":
-            if (document.getElementById("Chest") !== null) {
+            if (document.getElementById("Chest") !== null && gameState.FirstTimeTalkingToFlames === false) {
                 alert("You have found an apple!");
                 document.getElementById("Chest").remove();
                 changeInventory('Apple', 'add');
@@ -163,6 +168,7 @@ GameWindow.onclick = function (e) {
                 setTimeout(function () { otherKeyAvatar.style.opacity = 0; }, 22 * sec);
                 setTimeout(ShowMessage, 27 * sec, OtherCharacterSpeech, "Give us something to eat and the key is yours!");
 
+                setTimeout(function () { gameState.FirstTimeTalkingToFlames = false }, 31 * sec);
                 setTimeout(function () { otherAvatar.style.opacity = 0; }, 31 * sec);
                 setTimeout(function () { MainAvatar.style.opacity = 0; }, 31 * sec);
             } else {
@@ -175,7 +181,7 @@ GameWindow.onclick = function (e) {
                     setTimeout(function () { otherKeyAvatar.style.opacity = 1; }, 16 * sec);
                     // if (document.getElementById("Key1") !== null) {
                     // console.log('Found key!');
-                    setTimeout(function () { document.getElementById("Key1").remove(); }, 18 * sec);
+                    // setTimeout(function () { document.getElementById("Key1").remove(); }, 18 * sec);
                     setTimeout(function () { changeInventory('Key', 'add'); }, 18 * sec);
                     setTimeout(gameState.KeyPickedUp = true, 18 * sec);
                     //   gameState.KeyPickedUp = true;
@@ -184,8 +190,13 @@ GameWindow.onclick = function (e) {
                     setTimeout(function () { otherKeyAvatar.style.opacity = 0; }, 22 * sec);
                     setTimeout(ShowMessage, 22 * sec, MainCharacterSpeech, "Thanks guys!");
                     setTimeout(ShowMessage, 27 * sec, MainCharacterSpeech, "Here is your apple!");
+                    setTimeout(function () { appleSide.style.opacity = 1; }, 28 * sec);
+
                     setTimeout(function () { changeInventory('Apple', 'delete'); }, 29 * sec);
                     setTimeout(ShowMessage, 31 * sec, OtherCharacterSpeech, "nam nam nam nam!");
+                    setTimeout(function () { appleSide.style.opacity = 0; }, 31 * sec);
+                    setTimeout(function () { appleFront.style.opacity = 1; }, 31 * sec);
+                    setTimeout(function () { appleFront.style.opacity = 0; }, 35 * sec);
                     setTimeout(function () { otherAvatar.style.opacity = 0; }, 35 * sec);
                     setTimeout(function () { MainAvatar.style.opacity = 0; }, 35 * sec);
                 } else {

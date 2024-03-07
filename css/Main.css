@@ -263,6 +263,17 @@ h2 {
     width: 100px;
 }
 
+/*Apple Sides*/
+#AppleFrontImg {
+    opacity: 0;
+    width: 10%;
+}
+
+#AppleSideWaysImg {
+    opacity: 0;
+    width: 10%;
+}
+
 /*changing the image*/
 .HeroCharacter img {
     width: 35px;
