@@ -19,7 +19,7 @@
     <h1 id="MainTitle"><b></b></h1>
 
     <div id="container">
-        <img id="Background" draggable="false" src="assets/BG/tilemap1.jpg" />
+        <img id="Background" draggable="false" src="assets/BG/First Map.png" />
 
         <!--Inventory-->
         <div class="InventorySquare" class="foreground">
@@ -30,10 +30,20 @@
         <div id="DialogBox" class="foreground"></div>
 
         <!--Pickupables-->
-        <div id="Door1" class="foreground"></div>
-        <div id="Key1" class="foreground"></div>
-        <div id="Sign" class="foreground"></div>
+
+
+        <img id="Sign" src="assets/World Objects/Letter Closed.png" class="foreground">
         <div id="Statue" class="foreground"></div>
+
+
+        <img id="Chest" src="assets/World Objects/chest.png" class="ChestStyling foreground ">
+
+        <div id="House">
+            <img src="assets/World Objects/Big house to open.png" class="foreground ">
+        </div>
+
+        <img id="HouseLock" src="assets/World Objects/Lock.png" class="foreground HouseLockStyle">
+        <div id="Door1" class="foreground"></div>
 
         <!--Dialogs Hander-->
         <div id="dialogBar">
@@ -41,16 +51,28 @@
             <div id="OtherCharacterSpeech" class="foreground SpeechBubble"></div>
         </div>
 
+        <div id="MainCharacter" class="foreground HeroCharacter"><img src="assets/Character animations/Gif2.gif"
+                draggable="false">
+        </div>
+
         <img id="MainCharacterIMG" src="assets/Game Icon/Wilky Gut.png" draggable="false"
             class="foreground CharacterTalking">
-        <img id="counterAvatarImg" src="assets/World Objects/portairStatue.png" draggable="false"
+        <img id="CounterHouseIMG" src="assets/World Objects/Small House.png" draggable="false"
             class="foreground RightChar">
-        <div id="MainCharacter" class="foreground HeroCharacter"><img
-                src="assets/Character animations/animated-character-1-idle.gif" draggable="false" class="foreground">
-        </div>
+        <img id="counterAvatarImg" src="assets/Character animations/3Flames.png" draggable="false"
+            class="foreground RightChar">
+        <img id="counterKeyImg" src="assets/World Objects/Keyinv.png" draggable="false" class="foreground RightChar">
+
+        <img id="counterLetterCloseImg" src="assets/World Objects/Letter Closed.png" draggable="false"
+            class="foreground RightChar">
+        <img id="counterLetterOpenImg" src="assets/World Objects/Letter Open.png" draggable="false"
+            class="foreground RightChar">
+
         <div id="TileMap" class="Background">
-            <img src="assets/BG/tilemap2.jpg">
+            <img src="assets/BG/First Map.png">
         </div>
+
+        <div id="Smallhouse" class="foreground"></div>
     </div>
 
 
